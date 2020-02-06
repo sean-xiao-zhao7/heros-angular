@@ -1,1 +1,10 @@
-<input [(ngModel)]='hero.name' placeholder="name"/>
+<ol>
+  <li *ngFor='let hero of heroes'
+    (click)='showDetails(hero)'
+    [class.current]='hero === currentHero'
+    class='clickable'
+  >
+   {{hero.name}}
+  </li>  
+</ol>
+<app-hero-details [currentHero]="currentHero"></app-hero-details>
